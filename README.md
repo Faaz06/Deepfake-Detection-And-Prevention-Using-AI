@@ -22,12 +22,13 @@ Welcome to my Deepfake Detection and Prevention project! In this comprehensive a
 ---
 
 ## Documentation
-Check out the documentation of the project by clicking here!..  https://github.com/Faaz06/Deepfake-Detection-And-Prevention-Using-AI/blob/main/Deepfake%20detection%20and%20prevention%20Black%20book%20Documentation.pdf
+Check out the documentation of the project by clicking here [Click here.!](https://github.com/Faaz06/Deepfake-Detection-And-Prevention-Using-AI/blob/main/Deepfake%20detection%20and%20prevention%20Black%20book%20Documentation.pdf)
 
 ---
 
 ## Code
-Check out the code of the project by clicking here!.. https://github.com/Faaz06/Deepfake-Detection-And-Prevention-Using-AI/tree/main
+Check out the code of the project by clicking here [Click here.!](https://github.com/Faaz06/Deepfake-Detection-And-Prevention-Using-AI/tree/main)
+
 
 ---
 
@@ -95,12 +96,7 @@ You can modify these hyperparameters in the training script (`train.py`) if need
 ---
 
 ## Result Snapshots
-- **Home Screen:** Displays introduction and project goal.  
-- **Upload Image:** Allows users to upload images for testing.  
-- **Real Output:** If the image is genuine, output will show **Real**.  
-- **Fake Output:** If manipulated, output will show **Fake**.  
 
----
 
 ## Tools
 - **Python** (TensorFlow, Keras, scikit-learn, OpenCV)  
