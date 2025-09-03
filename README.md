@@ -213,3 +213,9 @@ This repository is intended for **research, education, and defensive** use only.
 ---
 
 If you want, I can also generate `CONTRIBUTING.md`, `requirements.txt`, example `train.py`/`infer.py` stubs, or a polished `app.py` Streamlit demo. Just tell me which file you want next.
+
+https://github.com/user-attachments/assets/0c42ff31-19de-4d4a-8e3b-ec6fcbb82501
+
+
+
+
