@@ -27,7 +27,7 @@ Check out the documentation of the project by clicking here!..  https://github.c
 ---
 
 ## Code
-Check out the code of the project by clicking here!
+Check out the code of the project by clicking here!.. https://github.com/Faaz06/Deepfake-Detection-And-Prevention-Using-AI/tree/main
 
 ---
 
