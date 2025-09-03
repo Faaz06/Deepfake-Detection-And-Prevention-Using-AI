@@ -6,13 +6,15 @@ AI-powered Deepfake Detection and Prevention system using Python, TensorFlow, an
 # Deepfake Detection and Prevention
 
 ## Table of Contents
-- Introduction  
-- Documentation  
-- Code  
-- Usage  
-- Training Details  
-- Result Snapshots  
-- Tools  
+- [Introduction](#introduction)  
+- [Documentation](#documentation)  
+- [Code](#code)  
+- [Usage](#usage)  
+- [Training Details](#training-details)  
+- [Result Snapshots](#result-snapshots)  
+- [Tools](#tools)  
+- [Thanks for Watching](#thanks-for-watching)  
+
 
 ---
 
