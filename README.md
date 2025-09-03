@@ -3,222 +3,115 @@ AI-powered Deepfake Detection and Prevention system using Python, TensorFlow, an
 # Deepfake Detection & Prevention
 
 > A step-by-step guide to download, run, and get final results from the Deepfake Detection and Prevention repository.
-
----
+# Deepfake Detection and Prevention
 
 ## Table of Contents
-
-* [About](#about)
-* [Features](#features)
-* [Project structure](#project-structure)
-* [Prerequisites](#prerequisites)
-* [Download the repository](#download-the-repository)
-* [Install dependencies](#install-dependencies)
-* [Prepare dataset and models](#prepare-dataset-and-models)
-* [Run training (optional)](#run-training-optional)
-* [Run inference (get final output)](#run-inference-get-final-output)
-* [Run the Streamlit demo UI](#run-the-streamlit-demo-ui)
-* [Expected outputs](#expected-outputs)
-* [Troubleshooting & tips](#troubleshooting--tips)
-* [Contributing & License](#contributing--license)
-* [Ethics & Usage](#ethics--usage)
+- Introduction  
+- Documentation  
+- Code  
+- Usage  
+- Training Details  
+- Result Snapshots  
+- Tools  
 
 ---
 
-## About
-
-This repository provides an end-to-end pipeline to **detect** and **help prevent** deepfake images and videos. It includes training code, inference scripts, visualization (Grad-CAM heatmaps), and a Streamlit demo app for quick testing.
-
----
-
-## Features
-
-* Frame-level and temporal (video) detection.
-* Lightweight backbones (e.g., MobileNetV2) for fast inference.
-* Explainability using Grad-CAM heatmaps.
-* Simple Streamlit UI for uploading media and viewing results.
-* Exportable detection reports.
+## Introduction
+Welcome to my Deepfake Detection and Prevention project! In this comprehensive approach, I utilize advanced AI techniques to tackle the growing challenge of deepfake images. By leveraging machine learning algorithms and neural networks, this project aims to identify and mitigate the impact of manipulated images. You'll find detailed documentation, code implementations, and datasets used to train and test our models. Whether you're a researcher, developer, or just curious about AI's role in combating digital misinformation, this repository offers valuable insights and tools to understand and counter deepfakes effectively.
 
 ---
 
-## Project structure (example)
-
-```
-README.md
-requirements.txt
-app.py                     # Streamlit demo
-src/
-  ├─ train.py
-  ├─ infer.py
-  ├─ utils.py
-  ├─ data_loader.py
-  └─ models/
-models/                    # saved weights (gitignored)
-notebooks/                 # experiments and EDA
-data/                      # (gitignored) local dataset folder
-inputs/                    # sample inputs for quick test
-outputs/                   # inference outputs (predictions, heatmaps, reports)
-assets/                    # screenshots and GIFs
-```
+## Documentation
+Check out the documentation of the project by clicking here!
 
 ---
 
-## Prerequisites
-
-* Python 3.8 or newer
-* At least 8 GB RAM (GPU recommended for training)
-* Git
-* (Optional) CUDA-compatible GPU + drivers for faster training/inference
+## Code
+Check out the code of the project by clicking here!
 
 ---
 
-## Download the repository
+## Usage
 
-1. Open a terminal (Linux/macOS) or PowerShell (Windows).
-2. Clone your repo:
+### 1. Clone the Repository
+git clone https://github.com/faazkhan/deepfake-detection.git
 
-```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
-```
+cd deepfake-detection
 
-3. If you prefer ZIP: on GitHub click **Code ▸ Download ZIP**, then extract.
+### 2. Create a Virtual Environment
+It is recommended to use a virtual environment to keep dependencies isolated.
 
----
+python -m venv env
 
-## Install dependencies
+Activate the environment:  
+**Windows:**
+- .\env\Scripts\activate
 
-It is recommended to use a virtual environment.
+**Linux/Mac:**
+- source env/bin/activate
 
-### Linux / macOS
+### 3. Install Dependencies
+Install all required Python libraries from requirements.txt.
+- pip install -r requirements.txt
 
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
-```
+### 4. Download the Dataset
+- Download the dataset from Kaggle.  
+- Place it inside the `dataset/` folder of the project.  
 
-### Windows (PowerShell)
+### 5. Train the Model
+Run the training script to train the deepfake detection model:
 
-```powershell
-python -m venv venv
-venv\Scripts\Activate.ps1
-pip install --upgrade pip
-pip install -r requirements.txt
-```
+ -python train.py
+ Once training is complete, a `.h5` file (trained model) will be automatically saved in the project folder.
 
-`requirements.txt` should include: `tensorflow` or `torch` (depending on your implementation), `opencv-python`, `numpy`, `pandas`, `scikit-learn`, `matplotlib`, `streamlit`, and any other utilities.
+### 6. Run the Application
+Run the Streamlit web app:
 
----
+-streamlit run app.py
 
-## Prepare dataset and models
 
-1. **Obtain dataset**: Download a public dataset such as FaceForensics++ or a DFDC subset (or use your own). Place dataset under `data/` with subfolders like `real/` and `fake/` or follow the loader's required format.
+### 7. Open in Browser
+After running, a new tab will open in your browser with the project interface.
 
-2. **Prepare dataset** (if required): run any preprocessing scripts to extract frames, align faces, and create train/val/test splits.
-
-```bash
-python src/data_loader.py --input data/raw --output data/processed --mode extract_frames
-```
-
-3. **(Optional) Download pre-trained weights**: If you provide example weights in `models/`, copy them there. If hosted externally, download and place into `models/`.
+### 8. Upload and Analyze Images
+- Upload an image you want to test.  
+- The model will process it and return a result: **Real** or **Fake**, along with reasoning.  
 
 ---
 
-## Run training (optional)
+## Training Details
+The model has been trained with the following configuration:
+- **Model Architecture:** Convolutional Neural Networks (CNN) with transfer learning (MobileNetV2 / VGG16 depending on configuration).  
+- **Optimizer:** Adam Optimizer (`learning_rate=0.001`)  
+- **Loss Function:** Binary Crossentropy  
+- **Metrics:** Accuracy, Precision, Recall  
+- **Epochs:** 20–30 (configurable based on system resources)  
+- **Batch Size:** 32  
+- **Dataset Split:** 80% training, 20% validation  
+- **Output File:** A trained model is saved as `deepfake_model.h5` in the project folder.  
 
-If you want to train your own model:
-
-```bash
-python src/train.py \
-  --dataset data/processed \
-  --epochs 20 \
-  --batch-size 32 \
-  --backbone mobilenet_v2 \
-  --save-dir models/run1
-```
-
-Notes:
-
-* Use `--gpu` or environment variables to enable GPU if available.
-* Check the `train.py` help (`-h`) for more flags (learning rate, augmentation, resume checkpoint, etc.).
+You can modify these hyperparameters in the training script (`train.py`) if needed.  
 
 ---
 
-## Run inference (get final output)
-
-Use `infer.py` to produce the final prediction, heatmaps, and an optional report.
-
-Example (image):
-
-```bash
-python src/infer.py \
-  --input inputs/sample_image.jpg \
-  --model models/run1/best_model.h5 \
-  --output outputs/sample_image_results.json \
-  --visualize outputs/heatmaps/
-```
-What these commands produce:
-
-* `outputs/*.json` or `outputs/*.csv` — per-file/frame predictions and confidence scores.
-* `outputs/heatmaps/` — saved Grad-CAM images for frames flagged as suspicious.
-* `outputs/report_<input>.pdf` (optional) — a human-readable report combining visuals and summary stats.
+## Result Snapshots
+- **Home Screen:** Displays introduction and project goal.  
+- **Upload Image:** Allows users to upload images for testing.  
+- **Real Output:** If the image is genuine, output will show **Real**.  
+- **Fake Output:** If manipulated, output will show **Fake**.  
 
 ---
 
-## Run the Streamlit demo UI
-
-Start the interactive demo to upload media and see results quickly:
-
-```bash
-streamlit run app.py
-```
-
-Open `http://localhost:8501` in your browser. The UI allows webcam or file upload, shows prediction probability, and displays Grad-CAM heatmaps.
+## Tools
+- **Python** (TensorFlow, Keras, scikit-learn, OpenCV)  
+- **Streamlit** (for deployment)  
+- **PyCharm** (development environment)  
+- **Kaggle Dataset**  
 
 ---
 
-## Expected final output
-
-After running inference or the Streamlit UI you should have:
-
-* A prediction label: `real` or `fake` with a probability score.
-* Visual explanation images (heatmaps) showing suspicious regions.
-* A report (JSON/CSV/PDF) summarizing the results and flagged timestamps/frames.
-
----
-
-## Troubleshooting & tips
-
-* **Model not loading**: confirm `--model` path and model format (.h5, .pt). Check package versions.
-* **CUDA errors**: ensure GPU drivers, CUDA, and cuDNN match your TensorFlow/PyTorch version.
-* **Missing dependencies**: reinstall with `pip install -r requirements.txt` and check for version conflicts.
-* **Slow inference**: switch to a lightweight backbone (MobileNet) or run on GPU.
-
----
-
-## Contributing & License
-
-Contributions are welcome. Please open issues or PRs. Add `CONTRIBUTING.md` for contribution rules.
-
-This project is released under the **MIT License** — see `LICENSE`.
-
----
-
-## Ethics & Usage
-
-This repository is intended for **research, education, and defensive** use only. Do not use it to create or distribute deepfakes, violate privacy, or make legal judgments. Include a dataset citation and follow licenses for any public datasets used.
-
----
-
-If you want, I can also generate `CONTRIBUTING.md`, `requirements.txt`, example `train.py`/`infer.py` stubs, or a polished `app.py` Streamlit demo. Just tell me which file you want next.
-
-
-
-
-https://github.com/user-attachments/assets/cc694114-e806-4585-a944-dd4aa8a297b1
-
+## Thanks for Watching
+Thank you for checking out my Deepfake Detection and Prevention project! If you found this project useful or interesting, please consider giving it a star 🌟 on GitHub. Your support is greatly appreciated!
 
 
 
