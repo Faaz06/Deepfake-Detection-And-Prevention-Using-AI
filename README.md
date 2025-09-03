@@ -104,6 +104,15 @@ You can modify these hyperparameters in the training script (`train.py`) if need
 ## Result Snapshots
 
 
+
+https://github.com/user-attachments/assets/20762c51-8555-4d83-a74a-21c0a9218305
+
+
+
+
+
+
+
 ## Tools
 - **Python** (TensorFlow, Keras, scikit-learn, OpenCV)  
 - **Streamlit** (for deployment)  
