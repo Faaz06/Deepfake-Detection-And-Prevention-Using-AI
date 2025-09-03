@@ -22,7 +22,7 @@ Welcome to my Deepfake Detection and Prevention project! In this comprehensive a
 ---
 
 ## Documentation
-Check out the documentation of the project by clicking here!
+Check out the documentation of the project by clicking here!..  https://github.com/Faaz06/Deepfake-Detection-And-Prevention-Using-AI/blob/main/Deepfake%20detection%20and%20prevention%20Black%20book%20Documentation.pdf
 
 ---
 
