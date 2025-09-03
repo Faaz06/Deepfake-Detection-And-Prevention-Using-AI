@@ -5,6 +5,16 @@ AI-powered Deepfake Detection and Prevention system using Python, TensorFlow, an
 > A step-by-step guide to download, run, and get final results from the Deepfake Detection and Prevention repository.
 # Deepfake Detection and Prevention
 
+Hello Researchers, Developers and Recruiters.
+
+This project presents a Deepfake Detection and Prevention system that leverages advanced AI techniques to tackle the growing challenge of manipulated media. By using machine learning algorithms and neural networks, the system can accurately identify whether an image is real or fake.
+
+## Have A Look At the App
+🔗 **[Live Demo on Vercel](https://deepfake-detection-and-prevention-u-git-a997c1-faaz06s-projects.vercel.app?_vercel_share=DGahs3q76qt2RruKIbDmmVwe1Y8Jpcfk)**  
+
+You'll also find detailed documentation, code implementations, and datasets used to train and test the models. Whether you're a researcher, developer, or just curious about AI's role in combating digital misinformation, this repository provides valuable insights and tools to understand and counter deepfakes effectively.
+
+
 ## Table of Contents
 - [Introduction](#introduction)  
 - [Documentation](#documentation)  
@@ -19,6 +29,8 @@ AI-powered Deepfake Detection and Prevention system using Python, TensorFlow, an
 ---
 
 ## Introduction
+
+
 Welcome to my Deepfake Detection and Prevention project! In this comprehensive approach, I utilize advanced AI techniques to tackle the growing challenge of deepfake images. By leveraging machine learning algorithms and neural networks, this project aims to identify and mitigate the impact of manipulated images. You'll find detailed documentation, code implementations, and datasets used to train and test our models. Whether you're a researcher, developer, or just curious about AI's role in combating digital misinformation, this repository offers valuable insights and tools to understand and counter deepfakes effectively.
 
 ---
